@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #f3f4f6;
+}
+
+.phone-frame {
+  width: 390px;
+  height: 844px;
+  border: 2px solid #333;
+  border-radius: 2rem;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
