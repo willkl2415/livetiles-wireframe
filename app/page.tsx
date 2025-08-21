@@ -1,5 +1,5 @@
 // app/page.tsx
-import "./globals.css"; // ensure CSS is loaded
+import "./skills.css";
 
 export default function Home() {
   return (
@@ -26,14 +26,13 @@ export default function Home() {
         <option>Dropdown Placeholder</option>
       </select>
 
-      {/* Toggle Pills */}
+      {/* Search Skills */}
       <label className="label">Search Skills</label>
       <div className="toggle-container">
         <div className="toggle-pill active">Domain</div>
         <div className="toggle-pill">General</div>
       </div>
 
-      {/* Search Button */}
       <button className="search-btn">Search</button>
 
       {/* Skills Grid */}
