@@ -1,26 +1,160 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* === Global Reset + Font === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #161748; /* Deep purple navy */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* === App Container === */
+.app-container {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+}
+
+/* === Title & Subtitle === */
+h1, .app-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.25rem;
+  color: #161748; /* Deep purple */
+}
+
+.subtitle {
+  font-size: 1rem;
+  text-align: center;
+  color: #478559; /* Green accent */
+  margin-bottom: 1.5rem;
+}
+
+/* === Labels === */
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #161748;
+  margin: 1rem 0 0.25rem;
+}
+
+/* === Dropdowns === */
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 2px solid #39a0ca; /* Sky blue border */
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  outline: none;
+}
+
+select:disabled {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* === Toggle Pills === */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.toggle-pill {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 2px solid #39a0ca;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #161748;
+  transition: all 0.2s ease;
+}
+
+.toggle-pill.active {
+  background: #39a0ca; /* Sky blue active */
+  color: #ffffff;
+}
+
+/* === Search Button === */
+.search-btn {
+  background: #39a0ca;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #2a7fa0;
+}
+
+.search-btn:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* === Skills Grid === */
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* === Expand & Clear Buttons === */
+.expand-btn,
+.clear-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out;
+}
+
+.expand-btn {
+  background: #39a0ca; /* Sky blue */
+  color: white;
+}
+
+.expand-btn:hover {
+  transform: scale(1.05);
+}
+
+.clear-btn {
+  background: #f95d9b; /* Pink */
+  color: white;
+}
+
+.clear-btn:hover {
+  transform: scale(1.05);
+}
+
+/* === Button Row (spacing between Expand / Clear) === */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
