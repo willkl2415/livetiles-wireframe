@@ -6,72 +6,78 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: linear-gradient(135deg, #39a0ca 0%, #6c63ff 100%);
-  color: #161748; /* Deep purple navy */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #f4f4f8;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
   padding: 2rem;
+  color: #161748; /* deep navy */
 }
 
-/* === App Container (Glassmorphism) === */
+/* === App Container (Phone Frame Style) === */
 .app-container {
   width: 100%;
   max-width: 420px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  padding: 1.5rem;
-  backdrop-filter: blur(12px);
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(135deg, #39a0ca, #f95d9b, #f7c948, #478559);
 }
 
 /* === Title & Subtitle === */
 h1, .app-title {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: 2.2rem;
+  font-weight: 900;
   text-align: center;
   margin-bottom: 0.25rem;
-  color: #161748; /* Deep purple */
+  background: linear-gradient(90deg, #39a0ca, #f95d9b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
   font-size: 1rem;
   text-align: center;
-  color: #478559; /* Green accent */
+  color: #478559; /* green accent */
   margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 /* === Labels === */
 .label {
   font-size: 0.9rem;
-  font-weight: 600;
-  color: #161748;
+  font-weight: 700;
   margin: 1rem 0 0.25rem;
+  color: #161748;
 }
 
 /* === Dropdowns === */
 select {
   width: 100%;
-  padding: 0.6rem;
-  border: 2px solid #39a0ca; /* Sky blue border */
+  padding: 0.7rem;
+  border: 2px solid #39a0ca;
   border-radius: 0.75rem;
   font-size: 1rem;
   margin-bottom: 0.75rem;
   outline: none;
-  transition: box-shadow 0.2s, transform 0.2s;
+  background: #fff;
+  color: #161748;
+  font-weight: 500;
+  transition: all 0.2s;
 }
 
 select:focus {
-  box-shadow: 0 0 8px rgba(57, 160, 202, 0.6);
-  transform: scale(1.02);
-}
-
-select:disabled {
-  background: #f3f4f6;
-  border-color: #d1d5db;
-  cursor: not-allowed;
+  border-color: #f95d9b;
+  box-shadow: 0 0 8px rgba(249,93,155,0.5);
 }
 
 /* === Toggle Pills === */
@@ -83,45 +89,54 @@ select:disabled {
 }
 
 .toggle-pill {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.25rem;
   border-radius: 9999px;
-  border: 2px solid #39a0ca;
+  border: 2px solid #161748;
   cursor: pointer;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #161748;
+  background: #fff;
   transition: all 0.2s ease;
 }
 
 .toggle-pill.active {
-  background: #39a0ca; /* Sky blue active */
-  color: #ffffff;
-  box-shadow: 0 4px 10px rgba(57, 160, 202, 0.4);
-}
-
-/* === Search Button === */
-.search-btn {
-  background: #39a0ca;
-  color: white;
+  background: linear-gradient(135deg, #39a0ca, #f95d9b);
+  color: #fff;
   border: none;
-  padding: 0.6rem 1.25rem;
-  border-radius: 0.75rem;
-  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* === Buttons === */
+button {
   font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(57, 160, 202, 0.4);
+  font-weight: 700;
+  padding: 0.7rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
 }
 
-.search-btn:hover {
-  background: #2a7fa0;
+button:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(57, 160, 202, 0.6);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.search-btn:disabled {
-  background: #93c5fd;
-  cursor: not-allowed;
+.search-btn {
+  background: linear-gradient(90deg, #39a0ca, #478559);
+  color: white;
+  margin: 0.5rem 0 1rem;
+}
+
+.expand-btn {
+  background: linear-gradient(90deg, #39a0ca, #f7c948);
+  color: white;
+}
+
+.clear-btn {
+  background: linear-gradient(90deg, #f95d9b, #ff7eb9);
+  color: white;
 }
 
 /* === Skills Grid === */
@@ -132,67 +147,27 @@ select:disabled {
   margin-top: 1rem;
 }
 
-/* === Skill Cards with Accent Borders === */
 .skill-card {
-  background: #ffffff;
-  border-left: 6px solid #39a0ca; /* Blue accent */
-  padding: 0.85rem 1rem;
+  padding: 0.9rem;
   border-radius: 0.75rem;
-  font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #161748;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+  border-left: 6px solid;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.skill-card:nth-child(2) {
-  border-left-color: #f95d9b; /* Pink accent */
-}
-
-.skill-card:nth-child(3) {
-  border-left-color: #478559; /* Green accent */
-}
+.skill-card:nth-child(1) { border-color: #39a0ca; } /* blue */
+.skill-card:nth-child(2) { border-color: #f95d9b; } /* pink */
+.skill-card:nth-child(3) { border-color: #f7c948; } /* yellow */
+.skill-card:nth-child(4) { border-color: #478559; } /* green */
 
 .skill-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
-/* === Expand & Clear Buttons === */
-.expand-btn,
-.clear-btn {
-  padding: 0.75rem 1.75rem;
-  border-radius: 9999px;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.expand-btn {
-  background: linear-gradient(135deg, #39a0ca, #6c63ff);
-  color: white;
-  box-shadow: 0 4px 12px rgba(57, 160, 202, 0.4);
-}
-
-.expand-btn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 6px 18px rgba(57, 160, 202, 0.6);
-}
-
-.clear-btn {
-  background: linear-gradient(135deg, #f95d9b, #ff758c);
-  color: white;
-  box-shadow: 0 4px 12px rgba(249, 93, 155, 0.4);
-}
-
-.clear-btn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 6px 18px rgba(249, 93, 155, 0.6);
-}
-
-/* === Button Row (spacing between Expand / Clear) === */
+/* === Button Row === */
 .button-row {
   display: flex;
   justify-content: center;

@@ -7,7 +7,7 @@ export default function Home() {
         <p className="subtitle">The Ultimate Skills Engine</p>
 
         {/* Industry */}
-        <div style={{ width: "100%" }}>
+        <div>
           <label className="label">Industry</label>
           <select>
             <option>Dropdown Placeholder</option>
@@ -15,7 +15,7 @@ export default function Home() {
         </div>
 
         {/* Function */}
-        <div style={{ width: "100%" }}>
+        <div>
           <label className="label">Function</label>
           <select>
             <option>Dropdown Placeholder</option>
@@ -23,7 +23,7 @@ export default function Home() {
         </div>
 
         {/* Role */}
-        <div style={{ width: "100%" }}>
+        <div>
           <label className="label">Role</label>
           <select>
             <option>Dropdown Placeholder</option>
@@ -31,7 +31,7 @@ export default function Home() {
         </div>
 
         {/* Search Skills */}
-        <div style={{ width: "100%" }}>
+        <div>
           <label className="label">Search Skills</label>
           <div className="toggle-container">
             <div className="toggle-pill active">Domain</div>
