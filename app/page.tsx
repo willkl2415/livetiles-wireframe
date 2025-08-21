@@ -1,87 +1,52 @@
 // app/page.tsx
+import "./globals.css"; // ensure CSS is loaded
+
 export default function Home() {
   return (
-    <main
-      style={{
-        fontFamily: "Arial, sans-serif",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "2rem",
-        gap: "1.5rem",
-        maxWidth: "400px",
-        margin: "0 auto",
-        border: "2px dashed #ccc",
-        borderRadius: "1rem",
-        background: "#fafafa",
-      }}
-    >
-      <h1 style={{ fontSize: "1.5rem", margin: 0 }}>Wireframe Layout</h1>
-      <p style={{ fontSize: "0.9rem", color: "#555" }}>
-        Placeholder only – no styling, just structure.
-      </p>
+    <main className="app-container">
+      {/* Title */}
+      <h1 className="app-title">Skills-Forge</h1>
+      <p className="subtitle">The Ultimate Skills Engine</p>
 
       {/* Industry */}
-      <div style={{ width: "100%" }}>
-        <label>Industry</label>
-        <div style={{ border: "1px solid #aaa", padding: "0.5rem", borderRadius: "0.5rem" }}>
-          Dropdown Placeholder
-        </div>
-      </div>
+      <label className="label">Industry</label>
+      <select>
+        <option>Dropdown Placeholder</option>
+      </select>
 
       {/* Function */}
-      <div style={{ width: "100%" }}>
-        <label>Function</label>
-        <div style={{ border: "1px solid #aaa", padding: "0.5rem", borderRadius: "0.5rem" }}>
-          Dropdown Placeholder
-        </div>
-      </div>
+      <label className="label">Function</label>
+      <select>
+        <option>Dropdown Placeholder</option>
+      </select>
 
       {/* Role */}
-      <div style={{ width: "100%" }}>
-        <label>Role</label>
-        <div style={{ border: "1px solid #aaa", padding: "0.5rem", borderRadius: "0.5rem" }}>
-          Dropdown Placeholder
-        </div>
+      <label className="label">Role</label>
+      <select>
+        <option>Dropdown Placeholder</option>
+      </select>
+
+      {/* Toggle Pills */}
+      <label className="label">Search Skills</label>
+      <div className="toggle-container">
+        <div className="toggle-pill active">Domain</div>
+        <div className="toggle-pill">General</div>
       </div>
 
-      {/* Search */}
-      <div style={{ width: "100%" }}>
-        <label>Search Skills</label>
-        <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.5rem" }}>
-          <div style={{ flex: 1, border: "1px solid #aaa", padding: "0.5rem", borderRadius: "0.5rem", textAlign: "center" }}>
-            Domain
-          </div>
-          <div style={{ flex: 1, border: "1px solid #aaa", padding: "0.5rem", borderRadius: "0.5rem", textAlign: "center" }}>
-            General
-          </div>
-        </div>
-      </div>
+      {/* Search Button */}
+      <button className="search-btn">Search</button>
 
-      {/* Skills Cards */}
-      <div style={{ width: "100%", marginTop: "1rem" }}>
-        <label>Skills</label>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginTop: "0.5rem" }}>
-          <div style={{ border: "1px solid #aaa", padding: "0.75rem", borderRadius: "0.5rem" }}>
-            Skill Card Placeholder 1
-          </div>
-          <div style={{ border: "1px solid #aaa", padding: "0.75rem", borderRadius: "0.5rem" }}>
-            Skill Card Placeholder 2
-          </div>
-          <div style={{ border: "1px solid #aaa", padding: "0.75rem", borderRadius: "0.5rem" }}>
-            Skill Card Placeholder 3
-          </div>
-        </div>
+      {/* Skills Grid */}
+      <div className="skills-grid">
+        <div className="skill-card">Skill Card Placeholder 1</div>
+        <div className="skill-card">Skill Card Placeholder 2</div>
+        <div className="skill-card">Skill Card Placeholder 3</div>
       </div>
 
       {/* Buttons */}
-      <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-        <div style={{ border: "1px solid #aaa", padding: "0.75rem 1.5rem", borderRadius: "9999px" }}>
-          Expand
-        </div>
-        <div style={{ border: "1px solid #aaa", padding: "0.75rem 1.5rem", borderRadius: "9999px" }}>
-          Clear
-        </div>
+      <div className="button-row">
+        <button className="expand-btn">Expand</button>
+        <button className="clear-btn">Clear</button>
       </div>
     </main>
   );
