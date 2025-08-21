@@ -7,7 +7,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: #ffffff;
+  background: linear-gradient(135deg, #39a0ca 0%, #6c63ff 100%);
   color: #161748; /* Deep purple navy */
   display: flex;
   justify-content: center;
@@ -16,14 +16,15 @@ body {
   padding: 2rem;
 }
 
-/* === App Container === */
+/* === App Container (Glassmorphism) === */
 .app-container {
   width: 100%;
   max-width: 420px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 1.5rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   padding: 1.5rem;
+  backdrop-filter: blur(12px);
 }
 
 /* === Title & Subtitle === */
@@ -55,10 +56,16 @@ select {
   width: 100%;
   padding: 0.6rem;
   border: 2px solid #39a0ca; /* Sky blue border */
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   font-size: 1rem;
   margin-bottom: 0.75rem;
   outline: none;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+select:focus {
+  box-shadow: 0 0 8px rgba(57, 160, 202, 0.6);
+  transform: scale(1.02);
 }
 
 select:disabled {
@@ -89,6 +96,7 @@ select:disabled {
 .toggle-pill.active {
   background: #39a0ca; /* Sky blue active */
   color: #ffffff;
+  box-shadow: 0 4px 10px rgba(57, 160, 202, 0.4);
 }
 
 /* === Search Button === */
@@ -101,11 +109,14 @@ select:disabled {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  transition: background 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(57, 160, 202, 0.4);
 }
 
 .search-btn:hover {
   background: #2a7fa0;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(57, 160, 202, 0.6);
 }
 
 .search-btn:disabled {
@@ -121,34 +132,64 @@ select:disabled {
   margin-top: 1rem;
 }
 
+/* === Skill Cards with Accent Borders === */
+.skill-card {
+  background: #ffffff;
+  border-left: 6px solid #39a0ca; /* Blue accent */
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #161748;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:nth-child(2) {
+  border-left-color: #f95d9b; /* Pink accent */
+}
+
+.skill-card:nth-child(3) {
+  border-left-color: #478559; /* Green accent */
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
 /* === Expand & Clear Buttons === */
 .expand-btn,
 .clear-btn {
-  padding: 0.6rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   border-radius: 9999px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: transform 0.15s ease-in-out;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .expand-btn {
-  background: #39a0ca; /* Sky blue */
+  background: linear-gradient(135deg, #39a0ca, #6c63ff);
   color: white;
+  box-shadow: 0 4px 12px rgba(57, 160, 202, 0.4);
 }
 
 .expand-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(57, 160, 202, 0.6);
 }
 
 .clear-btn {
-  background: #f95d9b; /* Pink */
+  background: linear-gradient(135deg, #f95d9b, #ff758c);
   color: white;
+  box-shadow: 0 4px 12px rgba(249, 93, 155, 0.4);
 }
 
 .clear-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(249, 93, 155, 0.6);
 }
 
 /* === Button Row (spacing between Expand / Clear) === */
