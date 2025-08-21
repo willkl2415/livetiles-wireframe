@@ -58,6 +58,22 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Skills Cards */}
+      <div style={{ width: "100%", marginTop: "1rem" }}>
+        <label>Skills</label>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginTop: "0.5rem" }}>
+          <div style={{ border: "1px solid #aaa", padding: "0.75rem", borderRadius: "0.5rem" }}>
+            Skill Card Placeholder 1
+          </div>
+          <div style={{ border: "1px solid #aaa", padding: "0.75rem", borderRadius: "0.5rem" }}>
+            Skill Card Placeholder 2
+          </div>
+          <div style={{ border: "1px solid #aaa", padding: "0.75rem", borderRadius: "0.5rem" }}>
+            Skill Card Placeholder 3
+          </div>
+        </div>
+      </div>
+
       {/* Buttons */}
       <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
         <div style={{ border: "1px solid #aaa", padding: "0.75rem 1.5rem", borderRadius: "9999px" }}>
